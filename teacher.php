@@ -87,6 +87,4 @@
             echo "Error: " . $sql . "<br>" . $connection->error;
         }
     }
-
-
     ?>

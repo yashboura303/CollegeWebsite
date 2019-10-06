@@ -34,14 +34,20 @@
         $result = $connection->query($sql);
         if ($result->num_rows > 0){
             $row = $result->fetch_array();
+            if ($row["avg(result)"] > 4.4){
+                echo "<h3 class='text-center text-warning font-weight-bold pt-2'>Passed !</h3>";
+            }
+            else{
+                echo "<h3 class='text-center text-danger font-weight-bold pt-2'>Failed</h3>";
+            }
             echo "<h3 class='text-center text-success font-weight-bold pt-2'>Your CGPA of sem ". $sem." is : ". number_format((float)$row[0], 2, '.', '')."</h3>";
         }
         $sql = "Select result,sub_name from appear a, Subject s where s.sem_no = $sem and a.PID = $pid and s.Sub_code = a.Sub_code ";
         $result = $connection->query($sql);
 
-        if ($result->num_rows > 0) {
+        if ($result->num_rows > 0){
             echo"<hr>";
-            echo"<h3 class='text-center text-info'>Marks Distrubution </h3>";
+            echo"<h4 class='text-center text-info pt-3'>Marks Distrubution </h4>";
             echo "<table class='table text-center table-striped table-bordered container '><thead class=' table-success'><tr><th scope='col'>Subject </th><th scope='col'>Marks</th></tr></thead><tbody>";
             // output data of each row
             while($row = $result->fetch_assoc()) {

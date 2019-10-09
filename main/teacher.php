@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Teacher</title>
+    <link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -34,53 +35,53 @@
                                         });
                                 });
     </script>
+    <link rel="stylesheet" href="../styles/login.css" text="">
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center">Teacher</h1>
-        <a href="authentication/teacherlogout.php" class=" text-center btn btn-danger">Logout</a>
+<?php require("../templates/header.php")?>
+<div class="backgroundLogin text-white">
+    <div class="container pt-4 pb-3">
+        <h2 class="text-center float-left">Upload Marks</h2>
+        <a href="../authentication/teacherlogout.php" class=" float-right text-center btn btn-danger">Logout</a>
     </div>
-    <div class="container">
+    <div class="container pt-5 pb-5 ">
         <form action="teacher.php" method = "POST">
-            <div class="form-group">
+            <div class=" form-group">
                 <label for="">Enter PID</label>
                 <input class="form-control w-50" type="number" name="pid" placeholder="student PID..">
             </div>
-            <select id="selectsem" class="custom-select" name = "sem">
+            <select id="selectsem" class="custom-select w-50 mt-2" name = "sem">
                 <option value="item0">--Select Sem--</option>
                 <option value="1">Sem 1</option>
                 <option value="4">Sem 4</option>
                 <option value="3">Sem 3</option>
             </select>
-            <br>
-            <br>
-            <select id="selectsub" class="custom-select" name = "sub">
+            <select id="selectsub" class="custom-select w-50 mt-3 mb-2 " name = "sub">
                 <option value="">-- Select subject -- </option>
             </select>
-            <div class="form-group pt-2">
+            <div class="form-group">
                 <label for="">Enter Marks</label>
                 <input class="form-control w-50" type="text" name="marks" placeholder="marks..">
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Submit</button>
         </form>
     </div>
+    </div>
 
-    <?php include('templates/footer.php') ?>
+    <?php include('../templates/footer.php') ?>
 
 
     <?php 
     if(isset($_POST["pid"]) && isset($_POST["marks"]) && isset($_POST["sem"]) && isset($_POST["sub"])){
-        $connection = new mysqli("localhost", "yash", "yash","StudentDB");
+        // $connection = new mysqli("localhost", "yash", "yash","StudentDB");
+        include('../dbconfig/connectdb.php');
         $sub = $_POST["sub"];
         $sem = $_POST["sem"];
         $marks = $_POST["marks"];
         $pid = $_POST["pid"];
-        // echo $sub.$sem;
         $subcode = $sub.$sem;
         $sql = "INSERT INTO appear VALUES ($pid, '$subcode',$marks);";
-        // echo $sql;
-        // $connection->query($sql);
         if ($connection->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {

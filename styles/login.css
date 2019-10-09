@@ -1,0 +1,25 @@
+.backgroundLogin{
+    background-image: url('../img/collegeabout.jpg'),linear-gradient(rgba(0, 0, 0, 0.486),rgba(0, 0, 0, 0.649));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    background-size: cover;
+    background-blend-mode: overlay;
+    z-index: 0;
+}
+.backgroundLogin::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+
+}
+.backgroundLogin .container{
+    z-index: 999;
+}

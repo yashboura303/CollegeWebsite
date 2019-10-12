@@ -1,3 +1,26 @@
+<?php 
+session_start();
+?>
+<?php 
+    include('../dbconfig/connectdb.php');
+   
+
+if (isset($_POST['username']) and isset($_POST['password'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $query = "SELECT * FROM `teacherLogin` WHERE username='$username' and password='$password'";
+        
+        $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+        $count = mysqli_num_rows($result);
+        if ($count == 1){
+        $_SESSION['username'] = $username;
+        header("Location: ../main/teacher.php");
+        }else{
+        $fmsg = "Invalid Login Credentials. Try Again";
+        echo "<h3 class = 'text-center text-danger'>$fmsg</h3>";
+        }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,23 +57,3 @@
     </div>
 </body>
 <?php include('../templates/footer.php')?>
-<?php 
-    include('../dbconfig/connectdb.php');
-    session_start();
-
-if (isset($_POST['username']) and isset($_POST['password'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $query = "SELECT * FROM `teacherLogin` WHERE username='$username' and password='$password'";
-        
-        $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-        $count = mysqli_num_rows($result);
-        if ($count == 1){
-        $_SESSION['username'] = $username;
-        header("Location: ../main/teacher.php");
-        }else{
-        $fmsg = "Invalid Login Credentials. Try Again";
-        echo "<h3 class = 'text-center text-danger'>$fmsg</h3>";
-        }
-}
-?>

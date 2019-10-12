@@ -2,8 +2,10 @@
     position: relative;
     padding: 0;
     margin: 0;
-    scroll-behavior: smooth;
 }
+html {
+    scroll-behavior: smooth;
+  }
 .navbar-nav{
     padding-left:10px;
 }
@@ -196,7 +198,22 @@
     padding-top:10%;
     display: none; 
 }
+
+/* CONTACT FORM */
+.contact:hover{
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
+    body{
+        font-size: 0.9rem;
+    }
+    h3,h2{
+        font-size: 1.4rem;
+    }
+    h4{
+        font-size: 1.2rem;
+    }
     .whysectionImg{
         display: none;
     }
@@ -225,10 +242,18 @@
     .mechanical{
         background-image: url('../img/mechanical.jpg'),
         linear-gradient(rgba(0, 0, 0, 0.699),rgba(0, 0, 0, 0.818));}
-
+    .header-text,.nav-link{
+        font-size: 20px;
+    }
+    .college-head h1{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .college-head h6{
+        font-size: 12px;
+    }
+    .college-head img{
+        height: 50px;
+        width: 50px;
+    }
   }
-
-/* CONTACT FORM */
-.contact:hover{
-    cursor: pointer;
-}

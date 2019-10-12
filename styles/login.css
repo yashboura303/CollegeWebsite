@@ -23,3 +23,6 @@
 .backgroundLogin .container{
     z-index: 999;
 }
+body{
+    position: relative;
+}

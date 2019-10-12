@@ -2,10 +2,10 @@
 <section class=" footer container-fluid bg-dark ">
 <h4 class="aboutTitle text-white text-center p-2">Contact Details</h4>
 <p class="text-white text-center ">Andrew College Of Engineering</p>
-<p class="text-white text-center "><i class="fas fa-map-marker-alt pr-2"></i> Mount Poinsur, S.V.P. Road, Borivali (West), Mumbai 400 103.</p>
+<p class="text-white text-center "><i class="fas fa-map-marker-alt pr-2"></i> Mount Gdgds S.V.P. Road, Derfg (West), Mumbai 400 103.</p>
 <p class="text-white text-center "><i class="fas fa-phone-alt pr-2"></i>022-289200000</p>
 <p class="text-white text-center "><i class="fas fa-envelope pr-2"></i>aceedu@ace.in</p>
-        <p class="mb-0 text-white text-center mb-0">Copyright ©2019 St. Francis Institute of Technology</p>  
+        <p class="mb-0 text-white text-center mb-0">Copyright ©2019 Andrew College Of Engineering</p>  
 </section>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -17,5 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
+<?php error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");?>
 

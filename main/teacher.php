@@ -83,7 +83,11 @@
         $subcode = $sub.$sem;
         $sql = "INSERT INTO appear VALUES ($pid, '$subcode',$marks);";
         if ($connection->query($sql) === TRUE) {
-            echo "New record created successfully";
+            // echo "New record created successfully";
+            echo "<div class='alert alert-success alert-dismissible w-50'>
+            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+            Record Added to the database!
+          </div>";
         } else {
             echo "Error: " . $sql . "<br>" . $connection->error;
         }

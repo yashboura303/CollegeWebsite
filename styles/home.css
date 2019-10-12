@@ -3,7 +3,12 @@
     padding: 0;
     margin: 0;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
+.navbar-nav{
+    padding-left:10px;
+}
 .nav-link::after {
     content: '';
     display: block;
@@ -11,7 +16,7 @@
     margin: auto;
     height: 2px;
     background-color: white;
-    transition: width .2s;
+    transition: width .2s ease-in-out;
 }
 
 .nav-link:hover::after {
@@ -57,7 +62,7 @@
 }
 
 .carousel-item:after
- {
+{
     content: "";
     display: block;
     position: absolute;
@@ -68,39 +73,187 @@
     background: rgba(0, 0, 0, 0.2);
 }
 
-.why {
-    background-image: url('../img/carousel3.jpg');
+.why{
+    background-image: url('../img/whybackground.jpg'),linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.649));
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
+    background-size: cover;
+    background-blend-mode: overlay;
 }
-
+.whyTitle{
+    position: relative;
+    padding-bottom: 30px;
+}
 .whyTitle::after {
     content: '';
-    margin: auto;
+    position: absolute;
     display: block;
-    margin-top: 10px;
-    width: 50px;
+    width: 200px;
     height: 3px;
+    bottom: 5;
+    left: 0;
+    right: 0;
     background-color: #f29b0d;
     transition: width .2s;
 }
 
 .whysectionImg {
-    height: 300px;
-    width: 440px;
-    z-index: 999;
+    max-height: 300px;
+    max-width: 400px;
+    height: auto;
+    width: auto;
 }
 
-.whyOverlay::after {
-    z-index: 0;
-    content: "";
-    display: block;
+.orangeTitlenoBorder{
+    color:#f29b0d; 
+}
+
+.fas{
+    /* color: #24292e; */
+    color:#f29b0d; 
+}
+.fa-handshake,.fa-toolbox{
+    display: relative;
+    color: #24292e;
+}
+.fa-eye{
+    color: #f29b0d;
+}
+.why .row h4{
+    display: inline;
+}
+.text-orange{
+    color: #f29b0d;
+}
+.stackholderH2{
+    position: relative;
+}
+.stackholderH2::after{
+    content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
+    display: block;
+    width: 200px;
+    height: 2px;
+    bottom: 5;
     left: 0;
     right: 0;
-    /* background: rgba(3, 3, 3, 0.479); */
+    background-color: #f29b0d;
+    transition: width .2s;
 }
+.rounded-circle{
+    height: 60px;
+    width: 60px;
+}
+
+
+/* SECTION DEPARTMENT */
+.computer,.electrical,.mechanical{
+    height: 300px;
+    background-image: url('../img/computer.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.61),rgba(0, 0, 0, 0.649));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    transition: all 4s ease-in-out;
+    position: relative;
+}
+.electrical{
+    background-image: url('../img/electrical.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.649));
+}
+.mechanical{
+    background-image: url('../img/mechanical.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.649));
+
+}
+.department-h2 {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.computer:hover{
+    background-image: url('../img/computer.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.918));
+}
+.electrical:hover{
+    background-image: url('../img/electrical.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.918));
+}
+.mechanical:hover{
+    background-image: url('../img/mechanical.jpg'),
+    linear-gradient(rgba(0, 0, 0, 0.788),rgba(0, 0, 0, 0.918));}
+.computer:hover .computerText, .electrical:hover .computerText, .mechanical:hover .computerText{
+    display: block;
+}
+.computer:hover .department-h2,.electrical:hover .department-h2, .mechanical:hover .department-h2{
+    top:10%;
+    left:50%;
+}
+.computerText{
+    transition: all 4s ease-in-out;
+    padding-top:10%;
+    display: none; 
+}
+
+/* CONTACT FORM */
+.contact:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        font-size: 0.9rem;
+    }
+    h3,h2{
+        font-size: 1.4rem;
+    }
+    h4{
+        font-size: 1.2rem;
+    }
+    .whysectionImg{
+        display: none;
+    }
+  .department-h2{
+        font-size: 20px;
+        top:15%;
+        left:50%;
+    }
+    .aboutSfit{
+        display: none;
+    }
+.computerText{
+        font-weight: lighter;
+        font-size: 0.8rem;
+        display: block;
+        padding-top:20%;
+    }
+    .computer{
+        background-image: url('../img/computer.jpg'),
+        linear-gradient(rgba(0, 0, 0, 0.699),rgba(0, 0, 0, 0.818));
+    }
+    .electrical{
+        background-image: url('../img/electrical.jpg'),
+        linear-gradient(rgba(0, 0, 0, 0.699),rgba(0, 0, 0, 0.818));
+    }
+    .mechanical{
+        background-image: url('../img/mechanical.jpg'),
+        linear-gradient(rgba(0, 0, 0, 0.699),rgba(0, 0, 0, 0.818));}
+    .header-text,.nav-link{
+        font-size: 20px;
+    }
+    .college-head h1{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .college-head h6{
+        font-size: 12px;
+    }
+    .college-head img{
+        height: 50px;
+        width: 50px;
+    }
+  }

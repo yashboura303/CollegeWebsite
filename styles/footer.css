@@ -1,0 +1,16 @@
+.aboutTitle{
+    position: relative;
+    padding-bottom: 30px;
+}
+.aboutTitle::after {
+    content: '';
+    position: absolute;
+    display: block;
+    margin-top: 5px;
+    height: 1px;
+    bottom: 5;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+    background-color: #f29b0d;
+}

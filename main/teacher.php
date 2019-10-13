@@ -12,29 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Teacher</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../js/teacher.js"></script>
     <link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-                    $("#selectsem").change(function () {
-                                var val = $(this).val();
-                                if (val == "1") {
-                                    $("#selectsub").html("<option value='BEE'>BEE</option> <option value = 'AM1' > AM - 1  </option>");
-                                    }
-                                    else if (val == "4") {
-                                        $("#selectsub").html("<option value='COA'>COA</option><option value='CG'>CG</option><option value='OSTL'>OSTL</option><option value='OS'>OS</option> <option value = 'AM4' > AM-4 </option>");
-                                        }
-                                        else if (val == "3") {
-                                            $("#selectsub").html("<option value='ECCF'>ECCF</option><option value='DLDA'>DLDA</option><option value='DIM'>DIM</option><option value = 'AM3' > AM - 3 </option>");
-                                            }
-                                            else {
-                                                $("#selectsub").html("<option value=''>--Select sem first--</option>");
-                                            }
-                                        });
-                                });
-    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src = "../js/contact.js">    </script>
     <link rel="stylesheet" href="../styles/login.css" text="">
 </head>
 
@@ -84,10 +68,7 @@
         $sql = "INSERT INTO appear VALUES ($pid, '$subcode',$marks);";
         if ($connection->query($sql) === TRUE) {
             // echo "New record created successfully";
-            echo "<div class='alert alert-success alert-dismissible w-50'>
-            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-            Record Added to the database!
-          </div>";
+            echo "<script type='text/javascript'>alert('$sub marks added to database');</script>";
         } else {
             echo "Error: " . $sql . "<br>" . $connection->error;
         }

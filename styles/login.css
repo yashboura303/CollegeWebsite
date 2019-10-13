@@ -26,3 +26,8 @@
 body{
     position: relative;
 }
+.alert-success{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}

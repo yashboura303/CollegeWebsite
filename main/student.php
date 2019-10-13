@@ -45,7 +45,7 @@
         if ($result->num_rows > 0){
             $row = $result->fetch_array();
             if ($row["avg(result)"] > 4.4){
-                echo "<h3 class='text-center text-warning font-weight-bold mt-3'> Congrats $name, you passed !</h3>";
+                echo "<h3 class='text-center text-warning font-weight-bold mt-3'> Congrats $name PID-($pid) you passed !</h3>";
             }
             else{
                 echo "<h3 class='text-center text-danger font-weight-bold pt-2'>Failed</h3>";

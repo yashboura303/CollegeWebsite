@@ -9,8 +9,7 @@
     <title>ACE</title>
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>    
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href = "styles/home.css" type="text/css">
     
 </head>
@@ -217,27 +216,6 @@
             </div>
         </div>
     </section>
-    
-    
     <?php include("templates/footer.php") ?>
     </body>
 </html>
-<script
-<?php 
-    
-    if(isset($_POST["submit"]))
-    {
-        $email = $_POST["email"];
-        $name = $_POST['name'];
-        $message = $_POST["message"];
-        $type = $_POST["type"];
-        $profession = $_POST["profession"];
-        $message = wordwrap($message,70);
-        $headers = "From:".$email;
-        $subject = "Message by".$name." ".$profession."of type".$type;
-        mail("yashboura303@gmail.com", $subject, $message, $headers);
-
-        echo "Your mail has been sent successfuly ! Thank you for your feedback";
-        header("location: home.php");
-    }
-?>

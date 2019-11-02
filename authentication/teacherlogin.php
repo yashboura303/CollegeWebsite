@@ -16,8 +16,8 @@ if (isset($_POST['username']) and isset($_POST['password'])){
         $_SESSION['username'] = $username;
         header("Location: ../main/teacher.php");
         }else{
-        $fmsg = "Invalid Login Credentials. Try Again";
-        echo "<h3 class = 'text-center text-danger'>$fmsg</h3>";
+        $fmsg = "Invalid Login Credentials. Enter Valid ID";
+        echo "<script type='text/javascript'>alert('$fmsg');</script>";
         }
 }
 ?>

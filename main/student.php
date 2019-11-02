@@ -37,7 +37,8 @@
         $pid = $_GET["pid"];
         $sem = $_GET["sem"];
         $sql = "Select S_Name from Students where PID = $pid";
-        $result = $connection->query($sql);
+        if ($connection->query($sql) === TRUE) {
+            $result = $connection->query($sql);
         $row = $result->fetch_array();
         $name = $row[0];
         $sql = "Select avg(result) from appear a, Subject s where s.sem_no = $sem and a.PID = $pid and s.Sub_code = a.Sub_code;";
@@ -46,6 +47,7 @@
             $row = $result->fetch_array();
             if ($row["avg(result)"] > 4.4){
                 echo "<h3 class='text-center text-warning font-weight-bold mt-3'> Congrats $name PID-($pid) you passed !</h3>";
+                
             }
             else{
                 echo "<h3 class='text-center text-danger font-weight-bold pt-2'>Failed</h3>";
@@ -65,8 +67,15 @@
             }
             echo "</tbody></table>";
         } else {
-            echo "0 results";
+            echo "<script type='text/javascript'>alert('$pid is not a valid pid');</script>";
         }
+        }
+        else{
+            echo "<script type='text/javascript'>alert('$pid is not a valid pid');</script>";
+        }
+       
+        
+        
 
         
         $connection->close();
